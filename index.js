@@ -8,7 +8,7 @@ var app = express();
 
 app.use(express.json()); // middleware
 
-const PORT = process.env.json();
+const PORT = process.env.PORT;
 
 // const MONGO_URL = "mongodb://localhost";
 const MONGO_URL = process.env.MONGO_URL;
