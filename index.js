@@ -21,7 +21,7 @@ async function createConnection() {
 }
 const client = await createConnection();
 
-// Create Method (POST)
+// Create Method (POST) 
 // creting a server for post tenants
 app.post("/tenants", async function (req, res) {
   const data = req.body;
