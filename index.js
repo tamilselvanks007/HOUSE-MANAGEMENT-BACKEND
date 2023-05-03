@@ -8,9 +8,9 @@ dotenv.config();
 
 var app = express();
 
-app.use(cors()); // used to access the data
+app.use(cors()); // it allows to use the same url for all the requests(.com)
 
-app.use(express.json()); // middleware
+app.use(express.json()); // middleware - Set the json parser
 
 const PORT = process.env.PORT;
 
@@ -23,7 +23,7 @@ async function createConnection() {
   console.log("Connected to Mongo");
   return client;
 }
-export const client = await createConnection();
+export const client = await createConnection(); // create a connection to mongo
 
 // Read Method (GET)
 // creating a server for home page

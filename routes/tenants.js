@@ -7,7 +7,7 @@ import {
   deleteTenantById,
 } from "../helper.js";
 
-const router = express.Router();
+const router = express.Router(); // we need to create a router object to use the router method in express
 
 // Create Method (POST)
 // creting a server for post tenants

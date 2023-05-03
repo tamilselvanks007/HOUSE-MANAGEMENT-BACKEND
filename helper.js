@@ -12,7 +12,7 @@ export async function readAllTenants() {
     .db("house-management")
     .collection("tenants")
     .find({})
-    .toArray();
+    .toArray(); // toArray() is used to convert cursor to array
 }
 
 export async function readTenantById(id) {
