@@ -1,10 +1,13 @@
 import express from "express";
 import { MongoClient } from "mongodb";
 import dotenv from "dotenv";
+import cors from "cors";
 
 dotenv.config();
 
 var app = express();
+
+app.use(cors()); // used to access the data 
 
 app.use(express.json()); // middleware
 
@@ -35,7 +38,7 @@ app.post("/tenants", async function (req, res) {
 // Read Method (GET)
 // creating a server for home page
 app.get("/", function (req, res) {
-  res.send("Hello world!");
+  res.send("➤ Hello and welcome to the house management system!🏠😊 <br/> <br/> ➤ Here you'll find all the information you need about your houses🏘️🏘️");
 });
 
 // creating a server for read all tenants
