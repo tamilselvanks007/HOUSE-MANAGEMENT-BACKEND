@@ -4,7 +4,7 @@ export async function createTenants(data) {
   return await client
     .db("house-management")
     .collection("tenants")
-    .insertMany(data);
+    .insertOne(data);
 }
 
 export async function readAllTenants() {

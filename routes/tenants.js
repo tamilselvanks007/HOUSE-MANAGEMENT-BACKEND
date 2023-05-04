@@ -11,7 +11,7 @@ const router = express.Router(); // we need to create a router object to use the
 
 // Create Method (POST)
 // creting a server for post tenants
-router.post("/add", async function (req, res) {
+router.post("/", async function (req, res) {
   const data = req.body;
   const result = await createTenants(data);
   res.send(result);
