@@ -1,10 +1,17 @@
 import { client } from "./index.js";
 
-export async function createTenants(data) {
+export async function createOneTenant(data) {
   return await client
     .db("house-management")
     .collection("tenants")
     .insertOne(data);
+}
+
+export async function createManyTenants(data) {
+  return await client
+    .db("house-management")
+    .collection("tenants")
+    .insertMany(data);
 }
 
 export async function readAllTenants() {

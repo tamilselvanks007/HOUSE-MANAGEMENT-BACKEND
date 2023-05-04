@@ -1,6 +1,7 @@
 import express from "express";
 import {
-  createTenants,
+  createOneTenant,
+  createManyTenants,
   readAllTenants,
   readTenantById,
   updateTenantById,
@@ -10,16 +11,22 @@ import {
 const router = express.Router(); // we need to create a router object to use the router method in express
 
 // Create Method (POST)
-// creting a server for post tenants
+// creting a server for post one tenants
+router.post("/more", async function (req, res) {
+  const data = req.body;
+  const result = await createManyTenants(data);
+  res.send(result);
+});
+
+// creting a server for post many tenants
 router.post("/", async function (req, res) {
   const data = req.body;
-  const result = await createTenants(data);
+  const result = await createOneTenant(data);
   res.send(result);
 });
 
 // Read Method (GET)
 // creating a server for read all tenants
-
 router.get("/", async function (req, res) {
   const result = await readAllTenants();
   res.send(result);
